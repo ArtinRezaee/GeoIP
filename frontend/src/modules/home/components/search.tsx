@@ -55,8 +55,7 @@ export const Search: React.FC = () => {
         setSearchResult(searchRes);
         setSearching(false);
       })
-      .catch((err) => {
-        console.error(err);
+      .catch(() => {
         setSearching(false);
       });
   }, [getLocationInfo, ipAddress]);
