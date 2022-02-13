@@ -2,6 +2,8 @@
 
 This is an application that allows you to input an IP address and get the approximate geo location of the IP address. This application relies on [MaxMind GeoLite2 database](https://dev.maxmind.com/geoip/geoip2/geolite2/) to retrieve the geolocation data, You can choose to use either the `Web Service` or `Database Service`.''
 
+![image](https://user-images.githubusercontent.com/22065489/153741720-6c993abc-4488-4140-8b26-6f7114c4a0b9.png)
+
 ## Running the Application
 To run this application, first make sure you have docker desktop, then run `docker-compose up -d`. Once completed, you should be able to see 2 containers one for `backend` and one for `frontend` under the `geoip` working directory on docker desktop
 
