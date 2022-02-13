@@ -7,7 +7,7 @@ This is an application that allows you to input an IP address and get the approx
 ## Running the Application
 To run this application, first make sure you have docker desktop, then run `docker-compose up -d`. Once completed, you should be able to see 2 containers one for `backend` and one for `frontend` under the `geoip` working directory on docker desktop
 
-## Tech Stack used
+## Tech Stack Used
 ### frontend:
 
  - React.js
