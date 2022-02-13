@@ -32,6 +32,7 @@ export const Search: React.FC = () => {
   const [searching, setSearching] = useState(false);
   const [searchResult, setSearchResult] = useState<UserInfo | undefined>();
   const [searchType, setSearchType] = useState<'web' | 'db'>('web');
+  const [hasError, setHasError] = useState(false);
 
   const { getLocationInfo } = useIpAddress(searchType);
 
@@ -44,10 +45,12 @@ export const Search: React.FC = () => {
 
   const handleSearchClick = useCallback(() => {
     if (!ipAddress) {
+      setHasError(true);
       return;
     }
 
     setSearching(true);
+    setHasError(false);
 
     getLocationInfo(ipAddress)
       .then((res) => {
@@ -56,7 +59,9 @@ export const Search: React.FC = () => {
         setSearching(false);
       })
       .catch(() => {
+        setHasError(true);
         setSearching(false);
+        setSearchResult(undefined);
       });
   }, [getLocationInfo, ipAddress]);
 
@@ -81,6 +86,8 @@ export const Search: React.FC = () => {
           label="IP Address"
           variant="outlined"
           size="small"
+          error={hasError}
+          helperText={hasError ? 'Invalid IP Address' : ''}
           className={classes.searchField}
           onChange={handleSeachChange}
         />
