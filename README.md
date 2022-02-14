@@ -32,3 +32,4 @@ With more time, I would have:
  - Added automated tests
  - Better hid the credentials required to access MaxMind GeoLite2 
  - Setup CI/CD using github actions and deployed the application on Google Cloud App Engine
+ - Created the type folder at the root of the application and created a script to copy these types to frontend and backend folder. This would prevent the need to manually add the types at both folders and result in more consistent types
